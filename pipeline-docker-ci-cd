@@ -22,7 +22,7 @@ node{
   stage('Remove Old Containers'){
     sshagent(['my-app-dev']) {
       try{
-        def sshCmd = 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.18.198'
+        def sshCmd = 'ssh -o StrictHostKeyChecking=no ubuntu@54.226.206.181'
         def dockerRM = 'docker rm -f my-app'
         sh "${sshCmd} ${dockerRM}"
       }catch(error){
