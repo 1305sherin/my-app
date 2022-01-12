@@ -33,7 +33,7 @@ node{
   stage('Deploy-Dev'){
     sshagent(['my-app-dev']) {
       input 'Deploy  to Dev?'
-      def sshCmd = 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.18.198'
+      def sshCmd = 'ssh -o StrictHostKeyChecking=no ubuntu@54.226.206.181'
       def dockerRun = 'docker run -d -p 8080:8080 --name my-app kammana/my-app:0.0.1'
       sh "${sshCmd} ${dockerRun}"
     }
